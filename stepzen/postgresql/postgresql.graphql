@@ -118,6 +118,14 @@ type Mutation {
       dml: INSERT
       configuration: "postgresql_config"
     )
+
+  insertSubreddit(topic: String!): Subreddit
+    @dbquery(
+      type: "postgresql"
+      table: "subreddit"
+      dml: INSERT
+      configuration: "postgresql_config"
+    )
   """
   In this mutation example you can see how to do a mutation to delete data from the database.
   """
