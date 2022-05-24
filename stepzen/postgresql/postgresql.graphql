@@ -52,6 +52,36 @@ type Query {
       table: "comment"
       configuration: "postgresql_config"
     )
+
+  getCommentByPostId(post_id: ID!): [Comment]
+    @dbquery(
+      type: "postgresql"
+      query: """
+      select * from "comment" where "post_id" = $1
+      """
+      configuration: "postgresql_config"
+    )
+
+  getVotesByPostId(post_id: ID!): [Vote]
+    @dbquery(
+      type: "postgresql"
+      query: """
+      select * from "vote" where "post_id" = $1
+      order by "created_at" desc
+      """
+      configuration: "postgresql_config"
+    )
+  """
+  How to query based on subreddit id
+  """
+  getSubredditListById(id: ID!): [Subreddit]
+    @dbquery(
+      type: "postgresql"
+      query: """
+      select * from "subreddit" where "id" = $1
+      """
+      configuration: "postgresql_config"
+    )
   """
   This query is an example of how to simply paginate your responses.
   """
