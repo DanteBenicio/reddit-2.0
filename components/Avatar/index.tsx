@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 
-export default function Avatar() {
+interface AvatarProps {
+  seed?: string
+  large?: boolean
+}
+
+export default function Avatar({ large, seed }: AvatarProps) {
   const { data: session } = useSession()
 
   return (
