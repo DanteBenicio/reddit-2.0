@@ -32,7 +32,7 @@ export default function Header() {
           />
         </Link>
       </div>
-      <div className="flex items-center mx-7 lg:bg-red-500 xl:min-w-[300px]">
+      <div className="flex items-center mx-7 xl:min-w-[300px]">
         <Home className="h-5 w-5" />
         <p className="flex-1 ml-2 hidden lg:inline">Home</p>
         <ChevronDown className="h-5 w-5" />
