@@ -21,14 +21,16 @@ export default function Header() {
   const { data: session } = useSession()
 
   return (
-    <header className="sticky flex bg-white top-0 z-50 px-4 py-2 shadow-sm">
-      <div className="relative h-10 w-20 flex-shrink-0">
-        <Image
-          priority
-          src="https://links.papareact.com/fqy"
-          objectFit="contain"
-          layout="fill"
-        />
+    <header className="sticky flex items-center bg-white top-0 z-50 px-4 py-2 shadow-sm">
+      <div className="relative h-10 w-20 flex-shrink-0 cursor-pointer">
+        <Link href="/">
+          <Image
+            priority
+            src="https://links.papareact.com/fqy"
+            objectFit="contain"
+            layout="fill"
+          />
+        </Link>
       </div>
       <div className="flex items-center mx-7 lg:bg-red-500 xl:min-w-[300px]">
         <Home className="h-5 w-5" />
