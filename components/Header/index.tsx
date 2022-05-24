@@ -15,6 +15,7 @@ import {
 import Image from 'next/image'
 import React from 'react'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 export default function Header() {
   const { data: session } = useSession()
