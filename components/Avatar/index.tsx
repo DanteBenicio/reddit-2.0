@@ -10,10 +10,14 @@ export default function Avatar({ large, seed }: AvatarProps) {
   const { data: session } = useSession()
 
   return (
-    <div className="relative h-10 w-10 rounded-full border-gray-300 bg-white">
+    <div
+      className={`relative overflow-hidden h-10 w-10 ${
+        large && 'h-20 w-20'
+      } rounded-full border-gray-300 bg-white`}
+    >
       <Image
         src={`https://avatars.dicebear.com/api/open-peeps/${
-          session?.user?.name || 'placeholder'
+          seed || session?.user?.name || 'placeholder'
         }.svg`}
         alt="avatar img"
         layout="fill"
