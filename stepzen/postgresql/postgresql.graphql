@@ -82,16 +82,6 @@ type Query {
       """
       configuration: "postgresql_config"
     )
-  getSubredditListLimit(limit: Int!): [Subreddit]
-    @dbquery(
-      type: "postgresql"
-      query: """
-      select * from "subreddit"
-      order by "created_at" desc
-      limit $1
-      """
-      configuration: "postgresql_config"
-    )
   """
   This query is an example of how to simply paginate your responses.
   """
@@ -146,6 +136,15 @@ type Query {
       order by "post"."created_at" desc
       """
       configuration: "postgresql_config"
+  getPostListByPostId(post_id: ID!): Post
+    @dbquery(
+      type: "postgresql"
+      query: """
+      select * from "post"
+      where "post"."id" = $1
+      """
+      configuration: "postgresql_config"
+    )
     )
   getSubredditList: [Subreddit]
     @dbquery(
