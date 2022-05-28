@@ -4,14 +4,11 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {},
     screens: {
       'mb': {'max': '420px'},
       'sm': '640px',
-      // => @media (min-width: 640px) { ... }
-
       'md': '768px',
       // => @media (min-width: 768px) { ... }
 

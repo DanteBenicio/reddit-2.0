@@ -6,10 +6,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
-html, body {
+html, #__next,body {
   min-height: 100vh;
+  @apply dark:bg-[#000]
 }
 
 body {
@@ -18,14 +20,59 @@ body {
 
 @layer components {
   .icon {
-    @apply h-9 w-6 lg:w-9 cursor-pointer rounded-sm lg:p-1 lg:hover:bg-gray-100
+    @apply h-9 w-6 lg:w-9 cursor-pointer rounded-sm lg:p-1 lg:hover:bg-gray-100 dark:hover:bg-gray-800
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 5vw, 1.875rem);
+  }
+
+  .form {
+    @apply flex flex-1 items-center space-x-2 px-3 py-2 mb:ml-4 rounded-md border border-gray-200 bg-gray-100 hover:border-blue-500 hover:bg-white dark:bg-gray-900 dark:caret-gray-100 dark:border-gray-800 dark:hover:border-gray-500 dark:hover:bg-black-700
+  }
+
+  .form:focus-within {
+    @apply dark:!border-gray-500 dark:!bg-black-700
   }
 
   .postButtons {
-    @apply flex items-center space-x-1 text-sm font-semibold p-2 hover:bg-gray-100 cursor-pointer rounded-sm
+    @apply flex items-center space-x-1 text-sm font-medium p-2 hover:bg-gray-100 cursor-pointer rounded-sm dark:hover:bg-gray-900
   }
 
   .voteButtons {
-    @apply h-6 w-6 hover:bg-gray-200 p-1 rounded-md cursor-pointer
+    @apply h-6 w-6 hover:bg-gray-200 p-1 rounded-md cursor-pointer dark:hover:bg-gray-900
+  }
+
+  .switch-button {
+    position: relative;
+    width: 100px;
+    background-color: #DAE0E6;
+    padding: 0.2rem;
+    height: 24px;
+    width: 50px;
+    border-radius: 2rem;
+    margin-left: 2rem;
+  }
+
+  .switch-button::before {
+    transition: all 0.2s ease;
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    left: 5%;
+    top: 8%;
+  }
+
+  .switch-button.active {
+    transition: all 0.2s ease;
+    background-color: #0079D3;
+  }
+
+  .switch-button.active::before {
+    transition: all 0.2s ease;
+    left: 54%;
   }
 }
