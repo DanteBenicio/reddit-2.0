@@ -119,14 +119,16 @@ export default function PostBox({ subreddit }: PostBoxProps) {
   return (
     <form
       onSubmit={onSubmit}
-      className="sticky top-16 z-50 bg-white border rounded-md border-gray-300"
+      className="sticky top-16 z-40 bg-white border rounded-md border-gray-200 dark:bg-black-700 dark:border-gray-850"
     >
-      <div className="flex items-center space-x-3 p-2">
-        <Avatar />
+      <div className="flex items-center space-x-3 p-3">
+        <div className="mb:hidden">
+          <Avatar />
+        </div>
 
         <input
           {...register('postTitle', { required: true })}
-          className="bg-gray-50 p-2 pl-5 outline-none flex-1"
+          className="w-full bg-gray-50 p-2 pl-5 outline-none flex-1 mb:pl-0 rounded-md dark:bg-gray-900 border dark:border-gray-850 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:bg-black-700"
           disabled={!session}
           type="text"
           placeholder={
@@ -140,19 +142,19 @@ export default function PostBox({ subreddit }: PostBoxProps) {
 
         <Photograph
           onClick={() => setImageBoxOpen((prevState) => !prevState)}
-          className={`h-6 text-gray-300 cursor-pointer ${
-            imageBoxOpen && 'text-blue-300'
+          className={`flex-shrink-0 h-6 text-gray-300 cursor-pointer ${
+            imageBoxOpen && 'text-blue-300 dark:text-orange-500'
           }`}
         />
-        <Link className="h-6 text-gray-300 cursor-pointer" />
+        <Link className="flex-shrink-0 h-6 text-gray-300 cursor-pointer" />
       </div>
 
       {!!watch('postTitle') && (
         <div className="flex flex-col p-2">
           <div className="flex items-center px-2">
-            <p className="min-w-[5.625rem]">Body:</p>
+            <p className="min-w-[5.625rem] dark:text-gray-300">Body:</p>
             <input
-              className="m-2 flex-1 bg-blue-50 p-2 outline-none"
+              className="m-2 flex-1 bg-blue-50 p-2 outline-none dark:bg-gray-900 rounded-md border dark:border-gray-850 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:bg-black-700"
               type="text"
               placeholder="Text"
               {...register('postBody')}
@@ -161,9 +163,9 @@ export default function PostBox({ subreddit }: PostBoxProps) {
 
           {!subreddit && (
             <div className="flex items-center px-2">
-              <p className="min-w-[5.625rem]">Subreddit:</p>
+              <p className="min-w-[5.625rem] dark:text-gray-300">Subreddit:</p>
               <input
-                className="m-2 flex-1 bg-blue-50 p-2 outline-none"
+                className="m-2 flex-1 bg-blue-50 p-2 outline-none dark:bg-gray-900 rounded-md border dark:border-gray-850 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:bg-black-700"
                 type="text"
                 placeholder="i.e. reactjs"
                 {...register('subreddit', { required: true })}
@@ -173,11 +175,11 @@ export default function PostBox({ subreddit }: PostBoxProps) {
 
           {imageBoxOpen && (
             <div className="flex items-center px-2">
-              <p className="min-w-[5.625rem]">Image URL:</p>
+              <p className="min-w-[5.625rem] dark:text-gray-300">Image URL:</p>
               <input
-                className="m-2 flex-1 bg-blue-50 p-2 outline-none"
+                className="m-2 flex-1 bg-blue-50 p-2 outline-none rounded-md border dark:bg-gray-900 dark:border-gray-850 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:bg-black-700"
                 type="text"
-                placeholder="Optional..."
+                placeholder="https://example.com/example-image.png"
                 {...register('postImage')}
               />
             </div>
@@ -198,7 +200,7 @@ export default function PostBox({ subreddit }: PostBoxProps) {
           {!!watch('postTitle') && (
             <button
               type="submit"
-              className="max-w-full rounded-3xl bg-blue-400 p-2 mx-3 text-white"
+              className="max-w-full rounded-3xl bg-blue-400 mt-2 p-2 mx-3 text-white font-medium dark:bg-orange-500 dark:hover:brightness-110"
             >
               Create Post
             </button>
