@@ -53,6 +53,18 @@ body {
     @apply h-6 w-6 hover:bg-gray-200 p-1 rounded-md cursor-pointer dark:hover:bg-gray-900
   }
 
+  .show_menu {
+    @apply absolute -bottom-[528px] right-0 z-50 w-[280px] h-[520px] bg-white pt-5 overflow-y-scroll rounded-lg dark:bg-black-700
+  }
+
+  .show_menu::-webkit-scrollbar {
+    @apply dark:bg-transparent dark:w-2
+  }
+
+  .show_menu::-webkit-scrollbar-thumb {
+    @apply dark:bg-[#444] rounded-2xl
+  }
+
   .switch-button {
     position: relative;
     width: 100px;
