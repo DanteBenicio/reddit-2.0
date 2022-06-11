@@ -32,9 +32,9 @@ import Robot from '../RedditLogo/Robot'
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { signIn, signOut, useSession } from 'next-auth/react'
-import Link from 'next/link'
 import SwitchButton from '../SwitchButton'
 import { useClickOutside } from '../../hooks/useClickOutside'
+import { useRouter } from 'next/router'
 
 export default function Header() {
   const { data: session } = useSession()
@@ -43,6 +43,7 @@ export default function Header() {
   const [themeMode, setThemeMode] = useState<string>('')
   const inputFormRef = useRef<HTMLInputElement | null>(null)
   const menuSessionRef = useRef<HTMLDivElement | null>(null)
+  const { push } = useRouter()
 
   useClickOutside(() => {
     setShowMenu(false)
@@ -77,10 +78,11 @@ export default function Header() {
 
   return (
     <header className="sticky flex items-center bg-white top-0 z-50 py-[6px] px-4 shadow-sm border-b-[1px] dark:border-b-gray-850 dark:bg-black-700">
-      <div className="relative h-10 max-w-32 cursor-pointer">
-        <Link href="/">
-          <Logo fillColor={themeMode === 'dark' ? '' : '#2A2A2A'} />
-        </Link>
+      <div
+        className="relative h-10 max-w-32 cursor-pointer"
+        onClick={() => push('/')}
+      >
+        <Logo fillColor={themeMode === 'dark' ? '' : '#2A2A2A'} />
       </div>
 
       <div className="flex items-center mx-7 p-[0.375rem] xl:min-w-[250px] mb:hidden rounded-md cursor-pointer border border-[1px] border-transparent hover:border-gray-200 dark:hover:border-gray-800">
