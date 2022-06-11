@@ -125,7 +125,7 @@ export default function Header() {
       {session ? (
         <div
           ref={menuSessionRef}
-          className="relative z-50 hidden lg:flex cursor-pointer border border-gray-100 dark:border-transparent dark:hover:border-gray-800"
+          className="relative hidden lg:flex cursor-pointer border border-gray-100 dark:border-transparent dark:hover:border-gray-800"
         >
           <div
             onClick={() => setShowMenu(!showMenu)}
