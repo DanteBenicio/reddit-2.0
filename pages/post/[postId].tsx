@@ -31,7 +31,10 @@ export default function PostPage() {
   const post: Post = data?.getPostListByPostId
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
-    console.log(data)
+    if (data.comment.length === 0) {
+      toast.error('Add a text message!')
+      return
+    }
 
     const notification = toast.loading('Posting your comment...')
 
