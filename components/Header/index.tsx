@@ -159,7 +159,7 @@ export default function Header() {
           </div>
 
           {showMenu && (
-            <div className="absolute -bottom-[528px] right-0 z-50 w-[280px] h-[520px] bg-white pt-5 overflow-y-scroll rounded-lg dark:bg-black-700">
+            <div className="show_menu">
               <div className="flex w-full items-center gap-5 pl-[1.375rem] mb-2">
                 <UserCircleOutline size={25} color="#818384" />
                 <span className="text-[#818384] ">My Stuff</span>
