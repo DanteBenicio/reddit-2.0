@@ -5,6 +5,11 @@ class MyDocument extends Document {
     return (
       <Html lang="eng">
         <Head>
+          <link
+            rel="shortcut icon"
+            href="/reddit-favicon.png"
+            type="image/x-icon"
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
