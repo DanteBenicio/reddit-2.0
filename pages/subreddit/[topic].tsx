@@ -18,7 +18,7 @@ export default function Subreddit() {
           </div>
 
           <div className="py-2">
-            <h1 className="text-3xl font-semibold">
+            <h1 className="font-semibold title dark:text-gray-100">
               Welcome to the r/{topic} subreddit
             </h1>
             <p className="text-sm text-gray-400">r/{topic}</p>
@@ -26,7 +26,7 @@ export default function Subreddit() {
         </div>
       </div>
 
-      <div className="mt-5">
+      <div className="mt-5 pb-5">
         <PostBox subreddit={topic! as string} />
         <Feed topic={topic as string} />
       </div>
