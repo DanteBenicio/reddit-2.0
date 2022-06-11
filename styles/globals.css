@@ -28,7 +28,7 @@ body {
   }
 
   .form {
-    @apply flex flex-1 items-center space-x-2 px-3 py-2 mb:ml-4 rounded-md border border-gray-200 bg-gray-100 hover:border-blue-500 hover:bg-white dark:bg-gray-900 dark:caret-gray-100 dark:border-gray-800 dark:hover:border-gray-500 dark:hover:bg-black-700
+    @apply flex flex-1 items-center space-x-2 px-3 py-2 mb:ml-4 rounded-md border border-gray-200 bg-gray-100 hover:border-blue-500 hover:bg-white dark:bg-gray-900 dark:caret-gray-100 dark:border-gray-800 dark:hover:border-gray-500 dark:hover:bg-black-700 dark:text-gray-200
   }
 
   .form:focus-within {
