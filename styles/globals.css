@@ -18,6 +18,16 @@ body {
   @apply min-h-screen max-w-[100vw] bg-slate-200
 }
 
+.dark::-webkit-scrollbar {
+  background: transparent;
+  width: 8px;
+}
+
+.dark::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 1rem;
+}
+
 @layer components {
   .icon {
     @apply h-9 w-6 lg:w-9 cursor-pointer rounded-sm lg:p-1 lg:hover:bg-gray-100 dark:hover:bg-gray-800
