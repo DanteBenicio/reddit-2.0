@@ -119,7 +119,7 @@ export default function PostBox({ subreddit }: PostBoxProps) {
   return (
     <form
       onSubmit={onSubmit}
-      className="sticky top-16 z-40 bg-white border rounded-md border-gray-200 dark:bg-black-700 dark:border-gray-850"
+      className="sticky top-20 z-40 bg-white border rounded-md border-gray-200 dark:bg-black-700 dark:border-gray-850"
     >
       <div className="flex items-center space-x-3 p-3">
         <div className="mb:hidden">
