@@ -9,6 +9,17 @@ export const useClickOutside = (
     document.addEventListener('click', (e) => {
       const clickedElement = e.target as HTMLElement
 
+      if (ignoredElement) {
+        if (
+          !elementRef.current?.contains(clickedElement) &&
+          clickedElement !== ignoredElement?.current
+        ) {
+          handler()
+        }
+
+        return ''
+      }
+
       if (!elementRef.current?.contains(clickedElement)) {
         handler()
       }
