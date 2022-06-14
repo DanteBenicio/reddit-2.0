@@ -42,7 +42,7 @@ export default function SidebarMenu() {
   return showSidebarMenu ? (
     <aside ref={sidebarMenuRef} className="sidebar_menu">
       {session ? (
-        <div className="flex items-center flex-col gap-5 justify-between dark:text-gray-200 p-6 py-4">
+        <div className="flex items-center flex-col gap-5 justify-between dark:text-gray-200 p-6 py-4 text-white">
           <div className="relative mx-auto w-full rounded-2xl">
             <SearchOutline
               className="absolute left-3 top-2"
