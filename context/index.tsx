@@ -24,7 +24,6 @@ export function ContextProvider({ children }: { children: ReactNode }) {
   const [themeMode, setThemeMode] = useState<'light' | 'dark' | string>('')
   const [showSidebarMenu, setShowSidebarMenu] = useState<boolean>(false)
   const [onlineStatus, setOnlineStatus] = useState<boolean>(false)
-
   const ignoredElement = useRef<HTMLDivElement | null>(null)
 
   return (
