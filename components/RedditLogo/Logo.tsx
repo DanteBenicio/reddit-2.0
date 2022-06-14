@@ -4,11 +4,11 @@ interface LogoProps {
 
 export default function Logo({ fillColor }: LogoProps) {
   return (
-    <span className="flex h-10 w-16 items-center lg:w-32">
+    <span className="absolute lg:relative mb:relative flex h-10 w-32 items-center lg:w-32">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="-15 0 40 20"
-        className=""
+        viewBox="-5 0 70 20"
+        className="absolute"
       >
         <g>
           <circle fill="#FF4500" cx="10" cy="10" r="10"></circle>
@@ -19,8 +19,8 @@ export default function Logo({ fillColor }: LogoProps) {
         </g>
       </svg>
       <svg
-        className="lg:block hidden"
-        viewBox="0 0 55 18"
+        className="absolute right-1 z-50 lg:block hidden mb:block w-16"
+        viewBox="0 0 60 18"
         xmlns="http://www.w3.org/2000/svg"
       >
         <g fill={fillColor || '#D7DADC'}>
