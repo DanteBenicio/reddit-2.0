@@ -128,7 +128,7 @@ export default function PostBox({ subreddit }: PostBoxProps) {
 
         <input
           {...register('postTitle', { required: true })}
-          className="w-full bg-gray-50 p-2 pl-5 outline-none flex-1 mb:pl-0 rounded-md dark:bg-gray-900 border dark:border-gray-850 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:bg-black-700"
+          className="w-full bg-gray-50 p-2 pl-5 outline-none flex-1 rounded-md dark:bg-gray-900 border dark:border-gray-850 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:bg-black-700"
           disabled={!session}
           type="text"
           placeholder={
