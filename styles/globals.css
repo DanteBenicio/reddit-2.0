@@ -18,6 +18,10 @@ body {
   @apply min-h-screen max-w-[100vw] bg-slate-200
 }
 
+strong {
+  @apply font-medium
+}
+
 .dark::-webkit-scrollbar {
   background: transparent;
   width: 8px;
@@ -63,6 +67,22 @@ body {
 
   .show_menu::-webkit-scrollbar-thumb {
     @apply dark:bg-[#444] rounded-2xl
+  }
+
+  .sidebar_menu {
+    @apply fixed top-[56px] hidden z-50 mb:block max-w-[70vw] right-0 min-h-[70vh] dark:bg-black-700 sm:max-w-sm max-w-full w-full bg-white mb:bg-[#1a2842] dark:mb:bg-[#1a2842]
+  }
+
+  .sidebar_menu::before {
+    position: absolute;
+    content: '';
+    bottom: -30vh;
+    max-width: 100vw;
+    min-height: calc(100vh - 70vh);
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    z-index: -1;
   }
 
   .switch-button {
