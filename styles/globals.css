@@ -61,6 +61,18 @@ strong {
     @apply absolute -bottom-[528px] right-0 z-50 w-[280px] h-[520px] bg-white pt-5 overflow-y-scroll rounded-lg dark:bg-black-700
   }
 
+  .comment {
+    @apply relative flex items-center space-x-2 space-y-5
+  }
+
+  .comment::before {
+    @apply absolute content-[''] left-4 -bottom-4 h-10 bg-white w-[2px] mb:-bottom-5
+  }
+
+  .comment:last-child::before {
+    @apply hidden
+  }
+
   .show_menu::-webkit-scrollbar {
     @apply dark:bg-transparent dark:w-2
   }
