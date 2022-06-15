@@ -100,7 +100,7 @@ export default function PostPage() {
 
               <div className="flex flex-col">
                 <p className="py-2 text-xs text-gray-400">
-                  <span className="font-medium text-gray-100 tracking-wide">
+                  <span className="font-medium dark:text-gray-100 tracking-wide">
                     {comment.username}
                   </span>{' '}
                   · <TimeAgo date={comment.created_at} />
