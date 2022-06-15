@@ -93,12 +93,8 @@ export default function PostPage() {
 
         <div className="-my-5 rounded-b-md border border-t-0 border-gray-300 bg-white py-5 px-10 dark:bg-black-700 dark:border-transparent">
           {post?.comments.map((comment) => (
-            <div
-              className="relative flex items-center space-x-2 space-y-5"
-              key={comment.id}
-            >
-              <hr className="absolute top-[75px] h-5 border left-7 z-0 dark:border-gray-300" />
-              <div className="z-50">
+            <div className="comment" key={comment.id}>
+              <div className="">
                 <Avatar seed={comment.username} />
               </div>
 
